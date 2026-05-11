@@ -89,6 +89,40 @@ article:hover {
   border-color: rgba(185, 28, 28, 0.5);
 }
 
+.filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.filtre-btn {
+  background-color: rgba(20, 20, 20, 0.85);
+  color: #d4d4d4;
+  border: 1px solid rgba(185, 28, 28, 0.35);
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.filtre-btn:hover {
+  background-color: rgba(185, 28, 28, 0.2);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.filtre-btn.active {
+  background-color: #b91c1c;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
 h2 {
   font-size: 1.8rem;
   color: #f8f8f8;

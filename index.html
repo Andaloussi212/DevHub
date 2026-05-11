@@ -75,8 +75,14 @@
       <section id="commandes">
         <h2>Commandes utiles</h2>
         <p>Mémo de commandes Git/Linux utiles au quotidien</p>
+        <div class="filtres">
+          <button data-filter="all" class="filtre-btn active">Toutes</button>
+          <button data-filter="git" class="filtre-btn">Git</button>
+          <button data-filter="linux" class="filtre-btn">Linux</button>
+          <button data-filter="docker" class="filtre-btn">Docker</button>
+        </div>
         <div class="grid">
-          <article>
+          <article data-category="git">
             <h3>Voir l'état d'un projet</h3>
             <p>Catégorie : Git</p>
             <p>Commande : <code>git status</code></p>
@@ -88,7 +94,7 @@
               un commit
             </p>
           </article>
-          <article>
+          <article data-category="git">
             <h3>Ajouter tous les fichiers modifiés</h3>
             <p>Catégorie : Git</p>
             <p>Commande : <code>git add .</code></p>
@@ -101,7 +107,7 @@
               projet
             </p>
           </article>
-          <article>
+          <article data-category="git">
             <h3>Créer un commit</h3>
             <p>Catégorie : Git</p>
             <p>Commande : <code>git commit -m "message"</code></p>
@@ -111,7 +117,7 @@
             </p>
             <p>Quand l'utiliser : Après avoir terminé une étape du projet</p>
           </article>
-          <article>
+          <article data-category="git">
             <h3>Envoyer les changements à GitHub</h3>
             <p>Catégorie : Git</p>
             <p>Commande : <code>git push</code></p>
@@ -123,7 +129,7 @@
               sauvegarder en ligne
             </p>
           </article>
-          <article>
+          <article data-category="git">
             <h3>Récupérer les changements depuis GitHub</h3>
             <p>Catégorie : Git</p>
             <p>Commande : <code>git pull</code></p>
@@ -136,7 +142,7 @@
               avec plusieurs personnes
             </p>
           </article>
-          <article>
+          <article data-category="git">
             <h3>Voir l'historique des commits</h3>
             <p>Catégorie : Git</p>
             <p>Commande : <code>git log</code></p>
