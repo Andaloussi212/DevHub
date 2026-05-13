@@ -123,6 +123,15 @@ article:hover {
   border-color: #ef4444;
 }
 
+#command-count {
+  color: #a3a3a3;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  padding: 6px 10px;
+  border-left: 3px solid #b91c1c;
+  background-color: rgba(20, 20, 20, 0.55);
+}
+
 h2 {
   font-size: 1.8rem;
   color: #f8f8f8;

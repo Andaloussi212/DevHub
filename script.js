@@ -17,10 +17,12 @@ btnRetour.addEventListener('click', function () {
 
 const btnFiltre = document.querySelectorAll('.filtre-btn');
 const commandCards = document.querySelectorAll('#commandes article');
+const commandCount = document.querySelector('#command-count');
 
 btnFiltre.forEach((button) => {
   button.addEventListener('click', function () {
     const filtreSelectionnee = button.dataset.filter;
+    let count = 0;
 
     btnFiltre.forEach((btn) => {
       btn.classList.remove('active');
@@ -35,9 +37,11 @@ btnFiltre.forEach((button) => {
         filtreSelectionnee === CategorieCarte
       ) {
         card.style.display = 'block';
+        count++;
       } else {
         card.style.display = 'none';
       }
     });
+    commandCount.textContent = `Commandes affichées : ${count}`;
   });
 });
