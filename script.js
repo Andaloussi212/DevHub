@@ -18,52 +18,50 @@ btnRetour.addEventListener('click', function () {
 const btnFiltre = document.querySelectorAll('.filtre-btn');
 const commandCards = document.querySelectorAll('#commandes article');
 const commandCount = document.querySelector('#command-count');
+const commandSearch = document.querySelector('#command-search');
+let currentFilter = 'all';
 
 function updateCommandeCount(count) {
   commandCount.textContent = `Commandes affichées : ${count}`;
 }
 
-updateCommandeCount(commandCards.length);
+function updateCommandDisplay() {
+  const searchValue = commandSearch.value.toLowerCase();
+  let count = 0;
+
+  commandCards.forEach((card) => {
+    const cardCategory = card.dataset.category;
+    const cardText = card.textContent.toLowerCase();
+    const matchFilter =
+      currentFilter === 'all' || currentFilter === cardCategory;
+    const matchSearch = cardText.includes(searchValue);
+
+    if (matchFilter && matchSearch) {
+      card.style.display = 'block';
+      count++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  updateCommandeCount(count);
+}
 
 btnFiltre.forEach((button) => {
   button.addEventListener('click', function () {
-    const filtreSelectionnee = button.dataset.filter;
-    let count = 0;
+    currentFilter = button.dataset.filter;
 
     btnFiltre.forEach((btn) => {
       btn.classList.remove('active');
     });
 
     button.classList.add('active');
-    commandCards.forEach((card) => {
-      const CategorieCarte = card.dataset.category;
 
-      if (
-        filtreSelectionnee === 'all' ||
-        filtreSelectionnee === CategorieCarte
-      ) {
-        card.style.display = 'block';
-        count++;
-      } else {
-        card.style.display = 'none';
-      }
-    });
-    updateCommandeCount(count);
+    updateCommandDisplay();
   });
 });
-
-const commandSearch = document.querySelector('#command-search');
 
 commandSearch.addEventListener('input', function () {
-  const searchValue = commandSearch.value.toLowerCase();
-
-  commandCards.forEach((card) => {
-    const cardText = card.textContent.toLowerCase();
-
-    if (cardText.includes(searchValue)) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
-    }
-  });
+  updateCommandDisplay();
 });
+
+updateCommandDisplay();
