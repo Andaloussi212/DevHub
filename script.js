@@ -51,3 +51,19 @@ btnFiltre.forEach((button) => {
     updateCommandeCount(count);
   });
 });
+
+const commandSearch = document.querySelector('#command-search');
+
+commandSearch.addEventListener('input', function () {
+  const searchValue = commandSearch.value.toLowerCase();
+
+  commandCards.forEach((card) => {
+    const cardText = card.textContent.toLowerCase();
+
+    if (cardText.includes(searchValue)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});

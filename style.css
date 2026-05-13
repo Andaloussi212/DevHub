@@ -132,6 +132,31 @@ article:hover {
   background-color: rgba(20, 20, 20, 0.55);
 }
 
+#command-search {
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 24px;
+  padding: 1Opx 14px;
+  background-color: rgba(2O, 20, 20, 0.85);
+  color: black;
+  border: 1px solid rgba(185, 28, 28, 0.35);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition:
+    border-color O.2 ease,
+    box-shadow 0.2s ease;
+}
+
+#command-search::placeholder {
+  color: #8a8a8a;
+}
+
+#command-search:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.2);
+}
+
 h2 {
   font-size: 1.8rem;
   color: #f8f8f8;
