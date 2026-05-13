@@ -19,6 +19,12 @@ const btnFiltre = document.querySelectorAll('.filtre-btn');
 const commandCards = document.querySelectorAll('#commandes article');
 const commandCount = document.querySelector('#command-count');
 
+function updateCommandeCount(count) {
+  commandCount.textContent = `Commandes affichées : ${count}`;
+}
+
+updateCommandeCount(commandCards.length);
+
 btnFiltre.forEach((button) => {
   button.addEventListener('click', function () {
     const filtreSelectionnee = button.dataset.filter;
@@ -42,6 +48,6 @@ btnFiltre.forEach((button) => {
         card.style.display = 'none';
       }
     });
-    commandCount.textContent = `Commandes affichées : ${count}`;
+    updateCommandeCount(count);
   });
 });
