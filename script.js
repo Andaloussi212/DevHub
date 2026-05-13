@@ -19,6 +19,7 @@ const btnFiltre = document.querySelectorAll('.filtre-btn');
 const commandCards = document.querySelectorAll('#commandes article');
 const commandCount = document.querySelector('#command-count');
 const commandSearch = document.querySelector('#command-search');
+const noCommandResult = document.querySelector('#no-command-result');
 let currentFilter = 'all';
 
 function updateCommandeCount(count) {
@@ -44,6 +45,12 @@ function updateCommandDisplay() {
     }
   });
   updateCommandeCount(count);
+
+  if (count === 0) {
+    noCommandResult.style.display = 'block';
+  } else {
+    noCommandResult.style.display = 'none';
+  }
 }
 
 btnFiltre.forEach((button) => {
