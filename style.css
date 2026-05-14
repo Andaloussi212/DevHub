@@ -67,6 +67,23 @@ main {
   padding: 40px 20px;
 }
 
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 620px;
+  display: block;
+
+  border-radius: 18px;
+  border: 1px solid rgba(185, 28, 28, 0.35);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+}
+
 section {
   margin-bottom: 60px;
   scroll-margin-top: 100px;
@@ -268,6 +285,14 @@ footer {
   nav ul {
     flex-wrap: wrap;
     gap: 12px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image img {
+    max-width: 100%;
   }
 
   main {
