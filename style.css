@@ -20,11 +20,12 @@ body::before {
   background: rgba(0, 0, 0, 0.35);
   z-index: -1;
   pointer-events: none;
+  content: '';
 }
 
 header {
   background-color: rgba(10, 10, 10, 0.85);
-  padding: 18px, 40px;
+  padding: 18px 40px;
   border-bottom: 1px solid rgba(185, 28, 28, 0.35);
   display: flex;
   align-items: center;
@@ -164,15 +165,15 @@ article:hover {
   width: 100%;
   max-width: 420px;
   margin-bottom: 24px;
-  padding: 1Opx 14px;
-  background-color: rgba(2O, 20, 20, 0.85);
-  color: black;
+  padding: 10px 14px;
+  background-color: rgba(20, 20, 20, 0.85);
+  color: #f5f5f5;
   border: 1px solid rgba(185, 28, 28, 0.35);
   border-radius: 10px;
   font-size: 0.95rem;
   outline: none;
   transition:
-    border-color O.2 ease,
+    border-color 0.2 ease,
     box-shadow 0.2s ease;
 }
 
@@ -190,7 +191,7 @@ article:hover {
   color: #fca5a5;
   background-color: rgba(185, 28, 28, 0.12);
   border: 1px solid rgba(185, 28, 28, 0.35);
-  border-radius: 1Opx;
+  border-radius: 10px;
   padding: 12px;
   margin-bottom: 20px;
 }
